@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+/*eslint-disable*/
+
+import React from 'react';
+import DarkMode from './components/DarkMode/DarkMode.js';
+import GamePage from './pages/GamePage/GamePage.js';
+import LandingPage from './pages/LandingPage/LandingPage.js';
+import { Route, Routes } from 'react-router-dom';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <DarkMode />
+      <Routes>
+        <Route path='/' element={<LandingPage />} />
+        <Route path='/game' element={<GamePage />} />
+      </Routes>
     </div>
   );
 }
 
 export default App;
+
+
