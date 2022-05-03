@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/number-baseball-game/static/css/main.6f7cde49.css",
-    "main.js": "/number-baseball-game/static/js/main.5d8ba5c9.js",
+    "main.js": "/number-baseball-game/static/js/main.0160abba.js",
     "index.html": "/number-baseball-game/index.html",
     "main.6f7cde49.css.map": "/number-baseball-game/static/css/main.6f7cde49.css.map",
-    "main.5d8ba5c9.js.map": "/number-baseball-game/static/js/main.5d8ba5c9.js.map"
+    "main.0160abba.js.map": "/number-baseball-game/static/js/main.0160abba.js.map"
   },
   "entrypoints": [
     "static/css/main.6f7cde49.css",
-    "static/js/main.5d8ba5c9.js"
+    "static/js/main.0160abba.js"
   ]
 }
