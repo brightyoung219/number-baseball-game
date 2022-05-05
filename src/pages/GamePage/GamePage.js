@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import './GamePage.scss';
+import { Link } from 'react-router-dom';
+import './GamePage.css';
 import GameOver from '../../components/GameOver/GameOver.js';
 import Logs from '../../components/Logs/Logs.js';
 import Win from '../../components/Win/Win.js';
 
 function GamePage() {
-  const navigate = useNavigate();
  
   const [answer, setAnswer] = useState([]); //정답 array ['1234']
   const showAnswer = [...answer.join()]; // 정답 array ['1','2','3','4']
@@ -15,7 +14,7 @@ function GamePage() {
   const [tryNum2, setTryNum2] = useState(''); // input 값
   const [tries, setTries] = useState([]); // input값 전체 저장 배열 길이가 10이 될 경우 게임오버
   const [log, setLog] = useState([]); // 몇 볼 몇 스트라이크 저장값 [{strike : strike, ball : ball}]
-  const [threeOut, setThreeOut] = useState(0); // 0볼 0스트라이크일 경우 +1
+  const [out, setOut] = useState(0); // 0볼 0스트라이크일 경우 +1
   const [gameOver3, setGameOver3] = useState(false); //3아웃일 경우 보여주는 컴포넌트
   const [gameOver10, setGameOver10] = useState(false); //도전 10회 다 소진한 경우 컴포넌트
   const [win, setWin] = useState(false); // 정담을 맞췄을 경우 보여주는 컴포넌트
@@ -69,7 +68,7 @@ function GamePage() {
       setPlay(false)
       return setGameOver10( true )
     }
-    if (threeOut === 2){
+    if (out === 2){
       setPlay(false)
       return setGameOver3( true )
     }
@@ -90,7 +89,7 @@ function GamePage() {
 
     // 0볼 0스트라이크일 경우 1아웃
     if (strike === 0 && ball === 0) {
-      setThreeOut((pre) => pre + 1)
+      setOut((pre) => pre + 1)
     };
 
     setLog((pre) => [{ strike: strike, ball: ball }, ...pre]);
@@ -104,8 +103,8 @@ function GamePage() {
 
   return (
     <div className='container'>
-      <div className='logo' onClick={() => navigate(-1)}>
-        <p>야구는<br />아니지만<br />야구게임</p>
+      <div className='logo'>
+        <Link className='link' to='/'><p>야구는<br />아니지만<br />야구게임</p></Link>
       </div>
 
       {gameOver3? <GameOver text='3아웃!' answer={answer[0]}/> : null}
@@ -115,7 +114,7 @@ function GamePage() {
       {win? <Win answer={answer[0]}/> : null}
 
       {play? <Logs
-      tryNum2={tryNum2} showAnswer={showAnswer} onChange={onChange} onSubmit={onSubmit} tryNum={tryNum} tries={tries} log={log} threeOut={threeOut}/> : null }
+      tryNum2={tryNum2} showAnswer={showAnswer} onChange={onChange} onSubmit={onSubmit} tryNum={tryNum} tries={tries} log={log} out={out}/> : null }
 
     </div>
   )

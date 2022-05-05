@@ -8,7 +8,7 @@ function GameOver({ text, answer }) {
       <h1>{text}</h1>
       <p>정답은! <b>{answer}</b>입니다.</p>
       <Link to="/"><button>메인으로</button></Link>
-      <button onClick={() => window.location.reload('/game') }>다시하기</button>
+      <button onClick={() => window.location.reload() }>다시하기</button>
     </div>
   )
 }

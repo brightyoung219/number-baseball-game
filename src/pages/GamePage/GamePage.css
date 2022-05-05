@@ -1,0 +1,23 @@
+.container {
+  height: 100vh;
+  margin-bottom: 50px;
+}
+
+.logo {
+  width: 80px;
+  cursor: pointer;
+}
+
+.link {
+  text-decoration: none;
+  color: #212529
+}
+
+.link:hover {
+  color: #212529
+}
+
+.logo p {
+  font-family: 'SBAggroB';
+  margin: 0px;
+}

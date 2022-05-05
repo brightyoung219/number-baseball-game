@@ -16,7 +16,7 @@ function Win({answer}) {
         </span> 
       </h2>
       <Link to="/"><button>메인으로</button></Link>
-      <button onClick={() => window.location.reload('/game') }>한번 더?</button>
+      <button onClick={() => window.location.reload() }>한번 더?</button>
     </div>
   )
 }
